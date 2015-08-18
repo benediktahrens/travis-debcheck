@@ -81,7 +81,7 @@ fi
 sudo apt-get install ubuntu-dev-tools
 wget https://ftp-master.debian.org/keys/archive-key-7.0.asc
 gpg --import $PWD/archive-key-7.0.asc
-pbuildeg-dist sid create --debootstrapopts --keyring=$HOME/.gnupg/pubring.gpg --mirror http://cdn.debian.net/debian/ || pbuilder-dist sid create --debootstrapopts --keyring=$HOME/.gnupg/pubring.gpg --mirror http://mirror.mit.edu/debian/
+pbuilder-dist sid create --debootstrapopts --keyring=$HOME/.gnupg/pubring.gpg --mirror http://cdn.debian.net/debian/ || pbuilder-dist sid create --debootstrapopts --keyring=$HOME/.gnupg/pubring.gpg --mirror http://mirror.mit.edu/debian/
 
 
 # Before building, add a hook to run lintian
