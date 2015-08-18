@@ -66,10 +66,12 @@ git config --global user.name "Benedikt Ahrens (on travis-ci.org)"
 # Make sure it builds outside a pbuilder
 #sudo apt-get build-dep alpine # I realize this is the previous version
 sudo apt-get install debhelper autotools-dev libdvdread-dev
-git dch -a -N "2.11+dfsg1-1"
-git add debian/changelog
-git commit -m 'Adding dch -a changelog'
-git-buildpackage $EXTRA_GIT_BUILDPACKAGE_ARGS  # intentionally not quoted
+#git dch -a -N "2.11+dfsg1-1"
+#git add debian/changelog
+#git commit -m 'Adding dch -a changelog'
+#git-buildpackage $EXTRA_GIT_BUILDPACKAGE_ARGS  # intentionally not quoted
+dpkg-buildpackage $EXTRA_BUILDPACKAGE_ARGS
+
 
 if [[ "$SKIP_PBUILDER" == "true" ]] ; then
     exit 0  # skip pbuilder for now
