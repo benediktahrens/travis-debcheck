@@ -70,7 +70,7 @@ sudo apt-get install debhelper autotools-dev libdvdread-dev
 #git add debian/changelog
 #git commit -m 'Adding dch -a changelog'
 #git-buildpackage $EXTRA_GIT_BUILDPACKAGE_ARGS  # intentionally not quoted
-git-buildpackage --git-upstream-tag='%(version)s' --git-debian-branch=debian/sid --git-ignore-new
+git-buildpackage --git-upstream-tag='%(version)s' --git-debian-branch=debian/sid #--git-ignore-new 
 
 
 if [[ "$SKIP_PBUILDER" == "true" ]] ; then
